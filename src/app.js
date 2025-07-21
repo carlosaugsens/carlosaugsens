@@ -1,4 +1,5 @@
 const express = require('express')
+const {resolve} = require('path')
 
 const homeRoutes = require('./routes/homeRoutes')
 
@@ -10,6 +11,7 @@ class App {
         this.app = express()
         this.middlewares()
         this.routes()
+        this.views()
     }
     
     middlewares(){
@@ -19,6 +21,11 @@ class App {
 
     routes(){
         this.app.use('/', homeRoutes)    
+    }
+
+    views(){
+        this.app.set('views', resolve(__dirname, 'views'))
+        this.app.set('view engine', 'ejs')
     }
 
 }

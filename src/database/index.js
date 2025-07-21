@@ -1,8 +1,10 @@
 const Sequelize = require('sequelize')
 const databaseConfig = require('../config/database')
 
+const classificacao = require('../models/Classificacao')
 
-const models = []
+
+const models = [classificacao]
 
 const connection = new Sequelize(databaseConfig)
 
