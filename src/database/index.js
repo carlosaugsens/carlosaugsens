@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const databaseConfig = require('../config/databaseConfig')
+const databaseConfig = require('../config/database')
 
 
 const models = []
